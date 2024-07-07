@@ -7,8 +7,24 @@
 
 
 @layer utilities{
+    .header-ul{
+        @apply flex  items-center justify-center  flex-col gap-5  lg:flex-row   lg:items-center lg:space-x-8    fixed top-[55px] md:top-[60px] left-0 right-0 bottom-1/2  lg:static   bg-black dark:bg-white lg:dark:bg-inherit lg:bg-inherit 
+    }
+    .toggolar{
+        @apply hidden
+    }
+    .hamicon{
+        @apply block
+    }
+  
+    .close{
+        @apply block
+    }
+    .nav-text2{
+        @apply text-base font-normal  lg:text-nav-clr dark:text-black lg:dark:text-white   px-5 lg:px-0 py-1 lg:py-0 rounded-full lg:rounded-none border-b lg:border-0 hover:bg-gradient-to-r from-[#ff758c] from-0% to-[#ff7eb3] to-100%    lg:hover:bg-none
+    }
     .nav-text{
-        @apply text-base font-normal text-nav-clr dark:text-white
+        @apply text-base font-normal text-white lg:text-nav-clr dark:text-black lg:dark:text-white   px-5 lg:px-0 py-1 lg:py-0 rounded-full lg:rounded-none border-b lg:border-0 hover:bg-gradient-to-r from-[#ff758c] from-0% to-[#ff7eb3] to-100% lg:hover:bg-none
     }
     .home-span{
         @apply text-rang-clr text-sm md:text-2xl  font-bold mb-1 block text-center

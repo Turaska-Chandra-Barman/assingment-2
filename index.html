@@ -9,17 +9,25 @@
 </head>
 <body class="font-plus bg-home-clr dark:bg-gray-700">
     <header class="max-w-12xl bg-white dark:bg-gray-600 d mx-auto fixed top-0 right-0 left-0  z-30 dark:border-b dark:border-stone-300">
-        <div class="max-w-10xl mx-auto px-5 sm:px-10 py-3 ">
+        <div class="max-w-10xl mx-auto px-5 sm:px-10 py-3  relative">
             <div class="flex items-center justify-between ">
             <div class="">
                 <img class="w-24 md:w-fit" src="./image/header-img.png" alt="header-img">
             </div>
             <nav>
-                <ul class=" hidden  lg:flex  items-center space-x-8 ">
-                    <li><a class="nav-text" href="#Home">Home</a></li>
-                    <li><a  class="nav-text" href="#About Us">About Us</a></li>
-                    <li><a  class="nav-text !text-active-clr" href="#Upskill">Upskill</a></li>
-                    <li><a  class="nav-text" href="#Contact us ">Contact us </a></li>
+                <ul id="ulId" class=" toggolar lg:flex  header-ul relative">
+                    <li id="navId"><a class="nav-text" href="#Home">Home</a></li>
+                    <li id="navId"><a  class="nav-text" href="#About Us">About Us</a></li>
+                    <li id="navId"><a  class="text-white lg:!text-active-clr nav-text2 " href="#Upskill">Upskill</a></li>
+                    <li id="navId"><a  class="nav-text" href="#Contact us ">Contact us </a></li>
+                    <li class="absolute lg:static lg:hidden left-5 md:left-12 top-2">
+                        <div id="closeTab" class="close text-white dark:text-black ">
+                            <svg  xmlns="http://www.w3.org/2000/svg" fill="none " viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                              </svg>
+                              
+                        </div>
+                    </li>
                 </ul>
             </nav>
                 <div class="flex items-center space-x-3">
@@ -28,6 +36,10 @@
                         <svg class="w-7 md:w-8" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
                             <path d="M30.4407 21.7534C28.5585 22.5378 26.5391 22.9404 24.5 22.9377C15.9738 22.9377 9.0625 16.0265 9.0625 7.50024C9.0625 5.3944 9.48367 3.38832 10.2468 1.55957C7.43399 2.733 5.03128 4.71255 3.34133 7.24889C1.65137 9.78524 0.749739 12.7649 0.75 15.8127C0.75 24.339 7.66125 31.2502 16.1875 31.2502C19.2353 31.2505 22.215 30.3489 24.7513 28.6589C27.2877 26.969 29.2672 24.5662 30.4407 21.7534Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
+                    </button>
+                    <button>
+                        <p id="hambargarmenu" class="hamicon hamicon2 dark:text-white transform scale-150 block lg:hidden "> ☰</p>
+                       
                     </button>
                 </div>
         </div> 
@@ -877,8 +889,8 @@
                     
                     <ul class="text-sm sm1:text-xs lg:text-sm xl:text-lg space-y-1 font-light dark:text-white">
                         <li>
-                            <div class="dark:bg-white dark:-ms-1 dark:py-2 dark:px-1 dark:rounded-3xl dark:w-1/2">
-                                <img class="w-24 md:w-fit" src="./image/header-img.png" alt="">
+                            <div  class="dark:bg-white dark:-ms-1 dark:py-2 dark:px-1 dark:rounded-3xl dark:w-1/2">
+                                <img  class="w-24 md:w-fit" src="./image/header-img.png" alt="">
                             </div>
                         </li>
                         <li>Level39</li>
@@ -934,10 +946,33 @@
     <script>
         const dark =document.getElementById('darkHtml');
         const switch1 = document.getElementById('darkSwitch');
+        
+        // hambargarmene
+        const hambargarmenu = document.querySelector('#hambargarmenu');
+        const ulId = document.querySelector('#ulId');
+        const closeTab = document.querySelector('#closeTab')
+        const close = document.querySelector('.close');
+        const navId =document.querySelector('#navId');
+        
+
         switch1.addEventListener('click' ,function(e){
           dark.classList.toggle('dark');
-          console.log(e)
+          
         })
+
+        hambargarmenu.addEventListener('click',function(e){
+            ulId.classList.remove('toggolar');
+        })
+
+        close.addEventListener('click',function(e){
+            ulId.classList.add('toggolar');
+        })
+
+        navId.addEventListener('click',function(e){
+            ulId.classList.add('toggolar');
+            console.log(e);
+        })
+
     </script>
 
     
