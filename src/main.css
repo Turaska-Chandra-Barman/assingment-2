@@ -44,7 +44,7 @@
         @apply flex items-center gap-4 mb-3 
     }
     .about-span{
-        @apply text-xs font-normal border mt-3 border-active-clr px-3 py-2 rounded-full
+        @apply text-xs font-normal border mt-3 border-active-clr px-3 py-2 rounded-full  dark:text-white
     }
     .about-btn1{
         @apply bg-active-clr px-2 md:px-4 lg:px-5 py-2 rounded-md text-white text-xs md:text-lg animationbtn  hover:bg-cyan-400 
